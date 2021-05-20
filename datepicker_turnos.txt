@@ -1,0 +1,37 @@
+datepick
+
+Asignación de turnos
+
+<!-- Inicio datepicker --> 
+<link href="style/js/datepicker/css/ui-lightness/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+<script src="style/js/datepicker/js/jquery-1.9.1.js"></script>
+<script src="style/js/datepicker/js/jquery-ui-1.10.3.custom.js"></script>
+<script> 
+  $(function() {
+    $( "#fe_nac" ).datepicker();
+    $( "#fe_nac" ).datepicker( "option", "showAnim", "show" );
+	$( "#fe_nac" ).datepicker( "option", "changeMonth", true );
+	$( "#fe_nac" ).datepicker( "option", "changeYear", true );
+	$( "#fe_nac" ).datepicker( "option", "showOtherMonths", true );
+	$( "#fe_nac" ).datepicker( "option", "dateFormat", "dd/mm/yy" );
+	$( "#fe_nac" ).datepicker( "option", "numberOfMonths", 3 );
+  });
+</script>
+<style type="text/css">
+	.ui-datepicker {
+        	font-size: 12px;
+		margin-top:0px;
+     	}
+	 .ui-datepicker td a{    
+  		padding: 0.0em;
+		text-align:center;
+	}
+	 .ui-datepicker td span{    
+  		padding: 0.0em;
+		text-align:center;
+	}
+	.ui-datepicker-week-end a {
+    		color: red !important;
+	}
+</style>
+<!-- Fin datepicker -->    

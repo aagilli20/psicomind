@@ -1,0 +1,48 @@
+Días
+
+<p>Seleccione el día de atención:</p>
+        <table class="table" width="100%">
+			<tr class="tr">
+            	<td class="td" width="16%">
+                	<input type="checkbox" name="dias[]" value="1"/> Lunes<br/>
+                </td>
+                <td class="td" width="16%">
+    				<input type="checkbox" name="dias[]" value="2"/> Martes<br/>
+                </td>
+                <td class="td" width="16%">
+                    <input type="checkbox" name="dias[]" value="3"/> Miércoles<br/>
+                </td>
+                <td class="td" width="16">
+                	<input type="checkbox" name="dias[]" value="4"/> Jueves<br/>   
+                </td>
+                <td class="td" width="16%">    
+                    <input type="checkbox" name="dias[]" value="5"/> Viernes<br/>   
+                </td>
+                <td class="td" width="20%">
+                    <input type="checkbox" name="dias[]" value="6"/> Sábado<br/>  
+                </td>
+            </tr>
+        </table>
+        <p>Debe seleccionar al menos un día antes de guardar</p>
+
+
+if(! isset($form["dias"])){
+		// debe seleccionar al menos un día para este horario
+		$datos_obligatorios = false;
+		$error_obligatorios = $error_obligatorios."- Fatan datos obligatorios - Debe seleccionar al menos un día para este horario</br>";
+	}
+
+
+
+
+$primero = true;
+		foreach($form["dias"] as $id_dia){
+			if($primero) {
+				$sql = $sql."('NULL','$hora_inicio', '$hora_fin', '$id_dia', '$id_turno')";
+				$primero = false;	
+			}
+			else $sql = $sql.",('NULL','$hora_inicio', '$hora_fin', '$id_dia', '$id_turno')";
+		}
+		$sql = $sql.";";
+
+
